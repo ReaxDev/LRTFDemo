@@ -4,7 +4,8 @@
   "scripts": {
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin",
-    "test": "tsc --noEmit && tslint app/**/*.ts app/*.ts"
+    "test": "tsc --noEmit && tslint app/**/*.ts app/*.ts",
+    "postinstall": "cp node_modules/materialize-css/js/date_picker/picker.js node_modules/materialize-css/bin/"
   },
   "dependencies": {
     "@angular/common": "^2.0.1",

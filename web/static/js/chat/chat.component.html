@@ -1,0 +1,20 @@
+<div>
+  <h2>{{room}}</h2>
+</div>
+<div #messagesContainer class="row messages">
+  <div class="col s12">
+    <ul class="collection">
+      <li *ngFor="let message of messages" class="collection-item avatar">
+        <img [src]="message.avatar" class="circle">
+        <span class="title">{{message.username}}</span>
+        <p>{{message.body}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="chat-input" class="z-depth-2">
+  <div class="input-field">
+    <input class="validate" type="text" [(ngModel)]="message" (keyup.enter)="sendMessage(message)" placeholder="Type here to leave a message" />
+  </div>
+</div>

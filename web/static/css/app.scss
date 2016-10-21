@@ -12,8 +12,23 @@ header, main, footer {
   padding-bottom: 30px;
 }
 
+.full-height {
+  height: 100vh;
+}
+
+.login {
+  width: 100%;
+}
+
 .container {
   width: 100%;
+}
+
+#login-button {
+  width: 25%;
+  height: 50px;
+  line-height: 50px;
+  padding-top: 10px;
 }
 
 #chat-input {

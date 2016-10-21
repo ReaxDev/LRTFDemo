@@ -1,0 +1,10 @@
+<div class="container full-height">
+  <div class="valign-wrapper full-height">
+    <div class="center-align valign login">
+      <a id="login-button" class="waves-effect waves-light btn center-align" href="/auth/twitter">
+        <i class="mdi mdi-36px mdi-twitter-circle"></i>
+        <span>Login with Twitter</span>
+      </a>
+    </div>
+  </div>
+</div>

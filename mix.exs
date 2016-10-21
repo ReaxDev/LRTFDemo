@@ -29,7 +29,7 @@ defmodule LRTF.Mixfile do
         :phoenix_ecto,
         :postgrex,
         :ueberauth,
-        :ueberauth_github
+        :ueberauth_twitter
       ]
     ]
   end

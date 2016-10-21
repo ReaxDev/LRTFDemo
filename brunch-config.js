@@ -2,7 +2,14 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      joinTo: {
+        "js/app.js": /^(web\/static\/js)/,
+        "js/vendor.js": /^(node_modules)/
+      },
+      order: {
+        before: [/process/, /reflect-metadata/],
+        after: [/\.html$/, /\.css$/]
+      }
 
       // To use a separate vendor.js bundle, specify two files path
       // http://brunch.io/docs/config#-files-
@@ -20,7 +27,9 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css",
+      joinTo: {
+        "css/app.css": 'web/static/css/app.scss'
+      },
       order: {
         after: ["web/static/css/app.css"] // concat app.css last
       }
@@ -51,9 +60,31 @@ exports.config = {
 
   // Configure your plugins
   plugins: {
-    babel: {
-      // Do not use ES6 compiler in vendor code
-      ignore: [/web\/static\/vendor/]
+    inlineCss: {
+      html: true,
+      passthrough: [/^node_modules/, 'web/static/css/app.scss']
+    },
+
+    sass: {
+      precision: 8,
+      allowCache: true,
+      sourceMapEmbed: true,
+      options: {
+        includePaths: [
+          'node_modules/materialize-css/sass/',
+          'node_modules/mdi/scss'
+        ]
+      }
+    },
+
+    brunchTypescript: {
+    },
+
+    copycat: {
+      "fonts": [
+        'node_modules/materialize-css/fonts/',
+        'node_modules/mdi/fonts'
+      ]
     }
   },
 

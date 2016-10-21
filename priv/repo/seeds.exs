@@ -9,3 +9,5 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+LRTF.Repo.insert(%LRTF.Room{name: "lobby", topic: "general stuff"})
